@@ -27,12 +27,12 @@ public class TitleScreen extends World
         Label directions=new Label("Press the arrow keys to move character", 30);
         addObject(directions, getWidth()/2, 380);
 
-        Label objective1=new Label("Press <a> to shoot at ", 30);
+        Label objective1=new Label("Press <q> to shoot at ", 30);
         addObject(objective1, getWidth()/2, 415);
 
         Target titleTarget=new Target();
         GreenfootImage targetImage=titleTarget.getImage();  
-        targetImage.scale(60, 60);
+        targetImage.scale(32, 30);
         titleTarget.setImage(targetImage);
         addObject(titleTarget, 540, 415);
 
@@ -41,18 +41,18 @@ public class TitleScreen extends World
         
         Bomb titleBomb=new Bomb();
         GreenfootImage bombImage=titleBomb.getImage();  
-        bombImage.scale(60, 60);
+        bombImage.scale(30, 30);
         titleBomb.setImage(bombImage);
         addObject(titleBomb, 478, 450);
         
-        Label objective3=new Label("Touch potion to heal ", 30);
+        Label objective3=new Label("Heal by touching ", 30);
         addObject(objective3, getWidth()/2, 485);
         
         Potion titlePotion=new Potion();
         GreenfootImage potionImage=titlePotion.getImage();  
         potionImage.scale(21, 30);
         titlePotion.setImage(potionImage);
-        addObject(titlePotion, 525, 485);
+        addObject(titlePotion, 515, 485);
     }
 
     /**
