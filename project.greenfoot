@@ -1,5 +1,6 @@
 #Greenfoot project file
 class.Bomb.image=Bomb.png
+class.MyWorld.image=Landscape.jpg
 class.Potion.image=Potion.png
 class.Target.image=Target.png
 class.TitleScreen.image=Title\ Screen.png
@@ -20,8 +21,8 @@ dependency5.to=MyWorld
 dependency5.type=UsesDependency
 editor.fx.0.height=735
 editor.fx.0.width=812
-editor.fx.0.x=304
-editor.fx.0.y=8
+editor.fx.0.x=22
+editor.fx.0.y=12
 height=772
 package.numDependencies=5
 package.numTargets=6
