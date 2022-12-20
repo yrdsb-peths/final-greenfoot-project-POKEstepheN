@@ -16,11 +16,13 @@ public class Player extends Actor
     
     /*
      * Sets the index for animation and attack images, the direction the 
-     * player is facing and the timer to control animation and attack speeds.
+     * player is facing, the state of moving or attacking
+     * and the timer to control animation and attack speeds.
      */ 
     int imageIndex=0;
     int attackIndex=0;
     String facing="right";
+    String state="move";
     SimpleTimer animationTimer=new SimpleTimer();
     SimpleTimer attackTimer=new SimpleTimer();
     
@@ -92,38 +94,32 @@ public class Player extends Actor
      */
     public void attack()
     {
+        if(attackTimer.millisElapsed()<400)
+        {
+            return;
+        }
+        
+        //If the last attack image is displayed, the state changes to move and index resets
+        if(attackIndex==3)
+        {
+            attackIndex=0;
+            state="move";
+            return;
+        }
+
+        //If 400 milliseconds have passed, the attack timer resets
         attackTimer.mark();
         
-        //Attack depends on the direction the player is facing
+        //Attack animation depends on the direction the player is facing
         if(facing.equals("right"))
         {
-            for(int i=0; i<attackRight.length; i++)
-            {
-                setImage(attackRight[i]);
-                if(attackTimer.millisElapsed()>300)
-                {
-                    attackTimer.mark();
-                }
-                else
-                {
-                    i-=1;
-                }
-            }
+            setImage(attackRight[attackIndex]);
+            attackIndex++;
         }
         else
         {
-            for(int i=0; i<attackLeft.length; i++)
-            {
-                setImage(attackLeft[i]);
-                if(attackTimer.millisElapsed()>300)
-                {
-                    attackTimer.mark();
-                }
-                else
-                {
-                    i-=1;
-                }
-            }
+            setImage(attackLeft[attackIndex]);
+            attackIndex++;
         }
     } 
     
@@ -132,7 +128,14 @@ public class Player extends Actor
      */
     public void act()
     {
-        animate();
+        if(state.equals("move"))
+        {
+            animate();
+        }
+        else
+        {
+            attack();
+        }
         //The player moves in a direction based on the arrow keys
         if(Greenfoot.isKeyDown("up"))
         {
@@ -156,7 +159,8 @@ public class Player extends Actor
         //The player fires if the user pressed q key
         if(Greenfoot.isKeyDown("q"))
         {
-            attack();
+            state="attack";
+            attackTimer.mark();
         }
     }
 }
