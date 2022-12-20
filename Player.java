@@ -8,20 +8,24 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Player extends Actor
 {
-    //Create a list to store the character's animation
+    //Create a list to store the character's animation and attack
     GreenfootImage[] idleRight=new GreenfootImage[4];
     GreenfootImage[] idleLeft=new GreenfootImage[4];
+    GreenfootImage[] attackRight=new GreenfootImage[3];
+    GreenfootImage[] attackLeft=new GreenfootImage[3];
     
     /*
-     * Sets the index for animation images, the direction the player is facing
-     * and the timer to control animation speeds.
+     * Sets the index for animation and attack images, the direction the 
+     * player is facing and the timer to control animation and attack speeds.
      */ 
     int imageIndex=0;
+    int attackIndex=0;
     String facing="right";
     SimpleTimer animationTimer=new SimpleTimer();
+    SimpleTimer attackTimer=new SimpleTimer();
     
     /**
-     * Constructor for player class
+     * Constructor for Player class
      */
     public Player()
     {
@@ -40,8 +44,21 @@ public class Player extends Actor
         }
         
         animationTimer.mark();
-
         setImage(idleRight[0]);
+        
+        //The attack list now contains the different movements
+        for(int i=0; i<attackRight.length; i++)
+        {
+            attackRight[i]=new GreenfootImage("images/Attack"+i+".png");
+            attackRight[i].scale(67, 100);
+        }
+        
+        for(int i=0; i<attackLeft.length; i++)
+        {
+            attackLeft[i]=new GreenfootImage("images/Attack"+i+".png");
+            attackLeft[i].mirrorHorizontally();
+            attackLeft[i].scale(67, 100);
+        }
     }
     
     /**
@@ -71,6 +88,46 @@ public class Player extends Actor
     }    
     
     /**
+     * This method displays different images to create an attack.
+     */
+    public void attack()
+    {
+        attackTimer.mark();
+        
+        //Attack depends on the direction the player is facing
+        if(facing.equals("right"))
+        {
+            for(int i=0; i<attackRight.length; i++)
+            {
+                setImage(attackRight[i]);
+                if(attackTimer.millisElapsed()>300)
+                {
+                    attackTimer.mark();
+                }
+                else
+                {
+                    i-=1;
+                }
+            }
+        }
+        else
+        {
+            for(int i=0; i<attackLeft.length; i++)
+            {
+                setImage(attackLeft[i]);
+                if(attackTimer.millisElapsed()>300)
+                {
+                    attackTimer.mark();
+                }
+                else
+                {
+                    i-=1;
+                }
+            }
+        }
+    } 
+    
+    /**
      * The actions that the player does or could do based on conditions.
      */
     public void act()
@@ -94,6 +151,12 @@ public class Player extends Actor
         {
             setLocation(getX()-5, getY());
             facing="left";
+        }
+        
+        //The player fires if the user pressed q key
+        if(Greenfoot.isKeyDown("q"))
+        {
+            attack();
         }
     }
 }
