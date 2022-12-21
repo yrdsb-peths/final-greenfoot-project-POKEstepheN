@@ -95,7 +95,29 @@ public class Player extends Actor{
             return;
         }
         
-        //If the last attack image is displayed, the state changes to move and index resets
+        //A thunderbolt is shot
+        if(attackIndex==2)
+        {
+            AttackBolt bolt=new AttackBolt();
+            GreenfootImage boltImage=bolt.getImage();  
+            if(facing.equals("right"))
+            {
+                boltImage.scale(800-getX(), 50);
+                bolt.setImage(boltImage);
+                getWorld().addObject(bolt, (800+getX())/2, getY());
+            }
+            else
+            {
+                boltImage.scale(getX(), 50);
+                bolt.setImage(boltImage);
+                getWorld().addObject(bolt, getX()/2, getY());
+            }
+        }
+        
+        /*
+         * After the display of the last attack image, the state changes to move
+         * and index resets. The bolt also is removed.
+         */
         if(attackIndex==3)
         {
             attackIndex=0;
