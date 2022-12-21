@@ -25,6 +25,9 @@ public class Player extends Actor{
     SimpleTimer animationTimer=new SimpleTimer();
     SimpleTimer attackTimer=new SimpleTimer();
     
+    //Create a thunderbolt object
+    AttackBolt bolt=new AttackBolt();
+    
     /**
      * Constructor for Player class
      */
@@ -104,7 +107,7 @@ public class Player extends Actor{
      * This method displays different images to create an attack.
      */
     public void attack(){
-        if(attackTimer.millisElapsed()<150)
+        if(attackTimer.millisElapsed()<220)
         {
             return;
         }
@@ -112,19 +115,18 @@ public class Player extends Actor{
         //A thunderbolt is shot
         if(attackIndex==2)
         {
-            AttackBolt bolt=new AttackBolt();
             GreenfootImage boltImage=bolt.getImage();  
             if(facing.equals("right"))
             {
-                boltImage.scale(800-getX(), 50);
+                boltImage.scale(800, 50);
                 bolt.setImage(boltImage);
-                getWorld().addObject(bolt, (800+getX())/2, getY());
+                getWorld().addObject(bolt, getX()+400, getY());
             }
             else
             {
-                boltImage.scale(getX(), 50);
+                boltImage.scale(800, 50);
                 bolt.setImage(boltImage);
-                getWorld().addObject(bolt, getX()/2, getY());
+                getWorld().addObject(bolt, getX()-400, getY());
             }
         }
         
@@ -136,10 +138,11 @@ public class Player extends Actor{
         {
             attackIndex=0;
             state="move";
+            getWorld().removeObject(bolt);
             return;
         }
 
-        //If 150 milliseconds have passed, the attack timer resets
+        //If 220 milliseconds have passed, the attack timer resets
         attackTimer.mark();
         
         //Attack animation depends on the direction the player is facing
