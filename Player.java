@@ -6,8 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @Stephen Liu 
  * @December 19, 2022
  */
-public class Player extends Actor
-{
+public class Player extends Actor{
     //Create a list to store the character's animation and attack
     GreenfootImage[] idleRight=new GreenfootImage[4];
     GreenfootImage[] idleLeft=new GreenfootImage[4];
@@ -29,8 +28,7 @@ public class Player extends Actor
     /**
      * Constructor for Player class
      */
-    public Player()
-    {
+    public Player(){
         //The idle animation list now contains the different movements
         for(int i=0; i<idleRight.length; i++)
         {
@@ -66,8 +64,7 @@ public class Player extends Actor
     /**
      * This method displays different images to create an animation.
      */
-    public void animate()
-    {
+    public void animate(){
         if(animationTimer.millisElapsed()<100)
         {
             return;
@@ -92,8 +89,7 @@ public class Player extends Actor
     /**
      * This method displays different images to create an attack.
      */
-    public void attack()
-    {
+    public void attack(){
         if(attackTimer.millisElapsed()<150)
         {
             return;
@@ -126,8 +122,7 @@ public class Player extends Actor
     /**
      * The actions that the player does or could do based on conditions.
      */
-    public void act()
-    {
+    public void act(){
         if(state.equals("move"))
         {
             animate();
