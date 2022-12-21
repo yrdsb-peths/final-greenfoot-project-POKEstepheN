@@ -30,7 +30,7 @@ public class TitleScreen extends World{
 
         Target titleTarget=new Target();
         GreenfootImage targetImage=titleTarget.getImage();  
-        targetImage.scale(32, 30);
+        targetImage.scale(33, 30);
         titleTarget.setImage(targetImage);
         addObject(titleTarget, 540, 415);
 

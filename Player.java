@@ -33,14 +33,14 @@ public class Player extends Actor{
         for(int i=0; i<idleRight.length; i++)
         {
             idleRight[i]=new GreenfootImage("images/Running"+i+".png");
-            idleRight[i].scale(164, 100);
+            idleRight[i].scale(175, 100);
         }
         
         for(int i=0; i<idleLeft.length; i++)
         {
             idleLeft[i]=new GreenfootImage("images/Running"+i+".png");
             idleLeft[i].mirrorHorizontally();
-            idleLeft[i].scale(164, 100);
+            idleLeft[i].scale(175, 100);
         }
         
         animationTimer.mark();
@@ -50,14 +50,28 @@ public class Player extends Actor{
         for(int i=0; i<attackRight.length; i++)
         {
             attackRight[i]=new GreenfootImage("images/Attack"+i+".png");
-            attackRight[i].scale(101, 150);
+            if(i==2)
+            {
+                attackRight[i].scale(56, 100);
+            }
+            else
+            {
+                attackRight[i].scale(100, 100);    
+            }
         }
         
         for(int i=0; i<attackLeft.length; i++)
         {
             attackLeft[i]=new GreenfootImage("images/Attack"+i+".png");
             attackLeft[i].mirrorHorizontally();
-            attackLeft[i].scale(101, 150);
+            if(i==2)
+            {
+                attackLeft[i].scale(56, 100);
+            }
+            else
+            {
+                attackLeft[i].scale(100, 100);    
+            }
         }
     }
     
