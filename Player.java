@@ -52,14 +52,14 @@ public class Player extends Actor
         for(int i=0; i<attackRight.length; i++)
         {
             attackRight[i]=new GreenfootImage("images/Attack"+i+".png");
-            attackRight[i].scale(67, 100);
+            attackRight[i].scale(101, 150);
         }
         
         for(int i=0; i<attackLeft.length; i++)
         {
             attackLeft[i]=new GreenfootImage("images/Attack"+i+".png");
             attackLeft[i].mirrorHorizontally();
-            attackLeft[i].scale(67, 100);
+            attackLeft[i].scale(101, 150);
         }
     }
     
@@ -94,7 +94,7 @@ public class Player extends Actor
      */
     public void attack()
     {
-        if(attackTimer.millisElapsed()<400)
+        if(attackTimer.millisElapsed()<150)
         {
             return;
         }
@@ -107,7 +107,7 @@ public class Player extends Actor
             return;
         }
 
-        //If 400 milliseconds have passed, the attack timer resets
+        //If 150 milliseconds have passed, the attack timer resets
         attackTimer.mark();
         
         //Attack animation depends on the direction the player is facing
