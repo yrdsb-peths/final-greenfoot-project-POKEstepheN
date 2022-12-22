@@ -20,3 +20,5 @@ Resources:
 https://stackoverflow.com/questions/15078935/what-does-class-mean-in-java
 
 https://ezgif.com/sprite-cutter
+
+https://www.greenfoot.org/topics/1375
