@@ -18,3 +18,5 @@ https://toppng.com/free-image/ikachu-db-sprites-pikachu-sprite-sheet-PNG-free-PN
 Resources:
 
 https://stackoverflow.com/questions/15078935/what-does-class-mean-in-java
+
+https://ezgif.com/sprite-cutter
