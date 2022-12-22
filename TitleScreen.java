@@ -57,8 +57,7 @@ public class TitleScreen extends World{
      * Checks if the space bar is pressed and goes to the game if pressed.
      */
     public void act(){
-        if(Greenfoot.isKeyDown("space"))
-        {
+        if(Greenfoot.isKeyDown("space")){
             MyWorld world=new MyWorld();
             Greenfoot.setWorld(world);
         }
