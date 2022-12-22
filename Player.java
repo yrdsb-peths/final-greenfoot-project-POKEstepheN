@@ -35,13 +35,13 @@ public class Player extends Actor{
         //The idle animation list now contains the different movements
         for(int i=0; i<idleRight.length; i++){
             idleRight[i]=new GreenfootImage("images/Running"+i+".png");
-            idleRight[i].scale(175, 100);
+            idleRight[i].scale(176, 100);
         }
         
         for(int i=0; i<idleLeft.length; i++){
             idleLeft[i]=new GreenfootImage("images/Running"+i+".png");
             idleLeft[i].mirrorHorizontally();
-            idleLeft[i].scale(175, 100);
+            idleLeft[i].scale(176, 100);
         }
         
         animationTimer.mark();

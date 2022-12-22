@@ -22,7 +22,7 @@ public class Target extends Actor{
         for(int i=0; i<rotationTarget.length; i++){
             rotationTarget[i]=new GreenfootImage("images/Target.png");
             rotationTarget[i].rotate(-90*i);
-            rotationTarget[i].scale(75, 75);
+            rotationTarget[i].scale(87, 75);
         }
         
         rotationTargetTimer.mark();

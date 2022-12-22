@@ -30,7 +30,7 @@ public class TitleScreen extends World{
 
         Target titleTarget=new Target();
         GreenfootImage targetImage=titleTarget.getImage();  
-        targetImage.scale(33, 30);
+        targetImage.scale(34, 30);
         titleTarget.setImage(targetImage);
         addObject(titleTarget, 540, 415);
 
@@ -48,7 +48,7 @@ public class TitleScreen extends World{
         
         Potion titlePotion=new Potion();
         GreenfootImage potionImage=titlePotion.getImage();  
-        potionImage.scale(21, 30);
+        potionImage.scale(19, 30);
         titlePotion.setImage(potionImage);
         addObject(titlePotion, 515, 485);
     }
