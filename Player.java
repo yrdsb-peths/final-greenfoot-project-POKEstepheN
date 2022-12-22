@@ -166,8 +166,9 @@ public class Player extends Actor{
             facing="left";
         }
         
-        //The player fires if the user pressed q key
-        if(Greenfoot.isKeyDown("q")){
+        //The player fires if the user pressed q key (Even if user holds down the key)
+        String key=Greenfoot.getKey();
+        if(key!=null && key.equals("q")){
             state="attack";
             attackTimer.mark();
         }
