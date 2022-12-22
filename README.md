@@ -13,7 +13,7 @@ https://bulbapedia.bulbagarden.net/wiki/Potion
 
 https://assets.pokemon.com//assets/cms2/img/misc/virtual-backgrounds/masters/glacier.jpg
 
-https://toppng.com/free-image/ikachu-db-sprites-pikachu-sprite-sheet-PNG-free-PNG-Images_216266
+https://www.kindpng.com/imgv/TJmJmRJ_pikachu-db-sprites-pikachu-sprite-sheet-hd-png/
 
 Resources:
 
