@@ -96,7 +96,7 @@ public class Player extends Actor{
      * This method displays different images to create an attack.
      */
     public void attack(){
-        if(attackTimer.millisElapsed()<220){
+        if(attackTimer.millisElapsed()<150){
             return;
         }
         
@@ -126,7 +126,7 @@ public class Player extends Actor{
             return;
         }
 
-        //If 220 milliseconds have passed, the attack timer resets
+        //If 150 milliseconds have passed, the attack timer resets
         attackTimer.mark();
         
         //Attack animation depends on the direction the player is facing

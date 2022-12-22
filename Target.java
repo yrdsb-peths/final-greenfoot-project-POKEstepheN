@@ -49,9 +49,20 @@ public class Target extends Actor{
      * The actions that the target will perform such as rotating.
      */
     public void act(){
-        //If the target is in the game world, the animation will be displayed
+        /*
+         * If the target is in the game world, the animation will be 
+         * displayed and the target will move from right to left
+         */
         if(getWorld().getClass()==MyWorld.class){
             targetAnimate();
+            setLocation(getX()-5, getY());
+            
+            //Occurs when the target touches the left side of the screen
+            if(getX()<0){
+                MyWorld world=(MyWorld) getWorld();
+                world.removeObject(this);
+                world.spawnTarget();
+            }
         }
     }
 }
