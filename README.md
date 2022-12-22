@@ -9,8 +9,16 @@ https://pokemondb.net/sprites/spheal
 
 https://pokemondb.net/sprites/voltorb
 
-https://www.nicepng.com/ourpic/u2w7r5e6i1o0y3r5_i-then-went-on-to-using-maya-to/
+https://bulbapedia.bulbagarden.net/wiki/Potion
 
 https://assets.pokemon.com//assets/cms2/img/misc/virtual-backgrounds/masters/glacier.jpg
 
-https://toppng.com/free-image/ikachu-db-sprites-pikachu-sprite-sheet-PNG-free-PNG-Images_216266
+https://www.kindpng.com/imgv/TJmJmRJ_pikachu-db-sprites-pikachu-sprite-sheet-hd-png/
+
+Resources:
+
+https://stackoverflow.com/questions/15078935/what-does-class-mean-in-java
+
+https://ezgif.com/sprite-cutter
+
+https://www.greenfoot.org/topics/1375
