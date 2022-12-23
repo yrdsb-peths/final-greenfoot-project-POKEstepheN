@@ -86,7 +86,7 @@ public class MyWorld extends World{
         
         //Switches to game over screen
         if(health<=0){
-            EndScreen end=new EndScreen();
+            EndScreen end=new EndScreen(score);
             Greenfoot.setWorld(end);
         }
         
