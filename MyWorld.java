@@ -17,7 +17,7 @@ public class MyWorld extends World{
     Health[] healthbar=new Health[20];
     
     /**
-     * Constructor for class MyWorld.
+     * Constructor for class MyWorld
      */
     public MyWorld(){    
         //Create a new world with 800x500 cells with a cell size of 1x1 pixels.
@@ -83,6 +83,13 @@ public class MyWorld extends World{
      */
     public void decreaseHealth(){
         health-=4;
+        
+        //Switches to game over screen
+        if(health<=0){
+            EndScreen end=new EndScreen();
+            Greenfoot.setWorld(end);
+        }
+        
         for(int i=0; i<healthbar.length; i++){
             healthbar[i]=new Health();
             if(i>=health){

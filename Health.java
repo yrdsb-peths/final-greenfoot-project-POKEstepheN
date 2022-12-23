@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Health extends Actor
 {        
     /**
-     * The constructor for Health.
+     * Constructor for Health class
      */
     public Health(){
         GreenfootImage healthImage=getImage();  
