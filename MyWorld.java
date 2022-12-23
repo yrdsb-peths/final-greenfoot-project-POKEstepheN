@@ -11,11 +11,16 @@ public class MyWorld extends World{
     public Label scoreLabel;
     public int level=1;
     
+    //Stores the health and the health bar
+    public int health=20;
+    public Label healthLabel;
+    Health[] healthbar=new Health[20];
+    
     /**
      * Constructor for class MyWorld.
      */
     public MyWorld(){    
-        // Create a new world with 800x500 cells with a cell size of 1x1 pixels.
+        //Create a new world with 800x500 cells with a cell size of 1x1 pixels.
         super(800, 500, 1, false);
         
         //Create Player object
@@ -25,6 +30,14 @@ public class MyWorld extends World{
         //Create score counter
         scoreLabel=new Label("Score: "+score, 80);
         addObject(scoreLabel, 650, 60);
+        
+        //Display health bar
+        healthLabel=new Label("HP", 60);
+        addObject(healthLabel, 40, 35);
+        for(int i=0; i<healthbar.length; i++){
+            healthbar[i]=new Health();
+            addObject(healthbar[i], 20+24*i, 80);
+        }
         
         //A target and bomb is spawned to the game world
         spawnTarget();
