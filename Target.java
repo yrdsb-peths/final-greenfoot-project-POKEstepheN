@@ -54,13 +54,23 @@ public class Target extends Actor{
          * displayed and the target will move from right to left
          */
         if(getWorld().getClass()==MyWorld.class){
+            MyWorld world=(MyWorld) getWorld();
             targetAnimate();
-            setLocation(getX()-5, getY());
+            setLocation(getX()-world.level, getY());
             
             //Occurs when the target touches the left side of the screen
             if(getX()<0){
-                MyWorld world=(MyWorld) getWorld();
                 world.removeObject(this);
+                world.spawnTarget();
+            }
+            
+            //Occurs when the target is hit
+            else if(isTouching(AttackBolt.class) && getX()<770){
+                //Remove the target
+                world.removeObject(this);
+                
+                //The score will increase and a new target appears
+                world.increaseScore();
                 world.spawnTarget();
             }
         }

@@ -7,6 +7,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @December 17, 2022
  */
 public class MyWorld extends World{
+    public int score=0;
+    public Label scoreLabel;
+    public int level=1;
+    
     /**
      * Constructor for class MyWorld.
      */
@@ -17,6 +21,10 @@ public class MyWorld extends World{
         //Create Player object
         Player player=new Player();
         addObject(player, 100, getHeight()/2);
+        
+        //Create score counter
+        scoreLabel=new Label("Score: "+score, 80);
+        addObject(scoreLabel, 650, 60);
         
         spawnTarget();
     }
@@ -29,5 +37,19 @@ public class MyWorld extends World{
         int x=800;
         int y=Greenfoot.getRandomNumber(getHeight());
         addObject(target, x, y);
+    }
+    
+    /**
+     * The score is increased if the target is hit
+     */
+    public void increaseScore(){
+        score++;
+        scoreLabel.setValue("Score: "+score);
+        
+        //After five successful hits, the speed increases
+        if(score%5==0 && level<8)
+        {
+            level++;
+        }
     }
 }
