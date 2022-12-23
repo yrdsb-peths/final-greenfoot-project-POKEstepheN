@@ -17,6 +17,8 @@ https://www.kindpng.com/imgv/TJmJmRJ_pikachu-db-sprites-pikachu-sprite-sheet-hd-
 
 https://www.realcanadiansuperstore.ca/green-neon-poster-board-22-x-28-50-sheets-by-shop/p/SP104673
 
+https://www.nme.com/news/gaming-news/a-new-pokemon-presents-will-air-this-weekend-3168921
+
 Resources:
 
 https://stackoverflow.com/questions/15078935/what-does-class-mean-in-java
