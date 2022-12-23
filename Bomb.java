@@ -53,10 +53,10 @@ public class Bomb extends Actor{
          * If the bomb is in the main game world, it will animate.
          */
         if(getWorld().getClass()==MyWorld.class){
-            bombAnimate();
-            setLocation(getX()-5, getY());
-            
             MyWorld world=(MyWorld) getWorld();
+            bombAnimate();
+            setLocation(getX()-world.level, getY());
+            
             //Occurs when the bomb reach the screen's left end
             if(getX()<0){
                 world.removeObject(this);
