@@ -77,4 +77,18 @@ public class MyWorld extends World{
             level++;
         }
     }
+    
+    /**
+     * The health is decreased if the bomb hits the player
+     */
+    public void decreaseHealth(){
+        health-=4;
+        for(int i=0; i<healthbar.length; i++){
+            healthbar[i]=new Health();
+            if(i>=health){
+                healthbar[i].turnGrey();
+            }
+            addObject(healthbar[i], 20+24*i, 80);
+        }
+    }
 }

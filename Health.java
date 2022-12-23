@@ -16,7 +16,15 @@ public class Health extends Actor
         healthImage.scale(20, 40);
         setImage(healthImage);
     }
-
+    
+    /**
+     * The health box will turn grey to signify a decrease in health
+     */
+    public void turnGrey(){
+        GreenfootImage greyImage=new GreenfootImage("images/Health1.png");  
+        greyImage.scale(20, 40);
+        setImage(greyImage);
+    }
     /**
      * Act - do whatever the Health wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.

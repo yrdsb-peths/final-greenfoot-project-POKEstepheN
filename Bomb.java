@@ -62,6 +62,15 @@ public class Bomb extends Actor{
                 world.removeObject(this);
                 world.spawnBomb();
             }
+            //Occurs when the bomb hits the player
+            else if(isTouching(Player.class)){
+                //Remove the bomb
+                world.removeObject(this);
+                
+                //The health will go down and a new bomb reappears
+                world.decreaseHealth();
+                world.spawnBomb();
+            }
         }
     }
 }
