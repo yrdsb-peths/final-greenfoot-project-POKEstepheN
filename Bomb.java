@@ -54,6 +54,14 @@ public class Bomb extends Actor{
          */
         if(getWorld().getClass()==MyWorld.class){
             bombAnimate();
+            setLocation(getX()-5, getY());
+            
+            MyWorld world=(MyWorld) getWorld();
+            //Occurs when the bomb reach the screen's left end
+            if(getX()<0){
+                world.removeObject(this);
+                world.spawnBomb();
+            }
         }
     }
 }

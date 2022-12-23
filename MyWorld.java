@@ -26,7 +26,9 @@ public class MyWorld extends World{
         scoreLabel=new Label("Score: "+score, 80);
         addObject(scoreLabel, 650, 60);
         
+        //A target and bomb is spawned to the game world
         spawnTarget();
+        spawnBomb();
     }
     
     /**
@@ -37,6 +39,16 @@ public class MyWorld extends World{
         int x=800;
         int y=Greenfoot.getRandomNumber(getHeight());
         addObject(target, x, y);
+    }
+    
+    /**
+     * A new bomb appears at the screen's right side
+     */
+    public void spawnBomb(){
+        Bomb bomb=new Bomb();
+        int x=800;
+        int y=Greenfoot.getRandomNumber(getHeight());
+        addObject(bomb, x, y);
     }
     
     /**
