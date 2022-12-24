@@ -55,7 +55,7 @@ public class Bomb extends Actor{
             bombAnimate();
             setLocation(getX()-world.level, getY());
             
-            //Occurs when the bomb reach the screen's left end
+            //Occurs when the bomb reaches the screen's left end
             if(getX()<0){
                 world.removeObject(this);
                 world.spawnBomb();
@@ -66,7 +66,7 @@ public class Bomb extends Actor{
                 world.removeObject(this);
                 
                 //The health will go down and a new bomb reappears
-                world.decreaseHealth();
+                world.changeHealth(-4);
                 world.spawnBomb();
             }
         }

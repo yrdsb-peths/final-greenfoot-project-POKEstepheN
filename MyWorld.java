@@ -90,10 +90,18 @@ public class MyWorld extends World{
     }
     
     /**
-     * The health is decreased if the bomb hits the player
+     * The health is changed if the bomb or potion touches the player
+     * 
+     * @param change The number that the health increase or decrease by
      */
-    public void decreaseHealth(){
-        health-=4;
+    public void changeHealth(int change){
+        //The health can not exceed the maximum of 20
+        if(change>0 && health+change>20){
+            health=20;
+        }
+        else{
+            health+=change;
+        }
         
         //Switches to game over screen
         if(health<=0){
@@ -101,6 +109,7 @@ public class MyWorld extends World{
             Greenfoot.setWorld(end);
         }
         
+        //Updates health bar
         for(int i=0; i<healthbar.length; i++){
             healthbar[i]=new Health();
             if(i>=health){
