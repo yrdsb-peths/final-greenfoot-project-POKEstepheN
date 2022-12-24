@@ -49,9 +49,7 @@ public class Bomb extends Actor{
      * The bomb will perform actions like rotating and hitting the player
      */
     public void act(){
-        /*
-         * If the bomb is in the main game world, it will animate.
-         */
+        //If the bomb is in the main game world, it will animate.
         if(getWorld().getClass()==MyWorld.class){
             MyWorld world=(MyWorld) getWorld();
             bombAnimate();

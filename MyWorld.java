@@ -39,9 +39,10 @@ public class MyWorld extends World{
             addObject(healthbar[i], 20+24*i, 80);
         }
         
-        //A target and bomb is spawned to the game world
+        //A target, bomb, and potion is spawned to the game world
         spawnTarget();
         spawnBomb();
+        spawnPotion();
     }
     
     /**
@@ -62,6 +63,16 @@ public class MyWorld extends World{
         int x=800;
         int y=Greenfoot.getRandomNumber(getHeight());
         addObject(bomb, x, y);
+    }
+    
+    /**
+     * A new potion appears at a random spot on the right of the screen
+     */
+    public void spawnPotion(){
+        Potion potion=new Potion();
+        int x=800;
+        int y=Greenfoot.getRandomNumber(getHeight());
+        addObject(potion, x, y);
     }
     
     /**
