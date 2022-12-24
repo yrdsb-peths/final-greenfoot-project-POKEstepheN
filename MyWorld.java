@@ -16,10 +16,15 @@ public class MyWorld extends World{
     public Label healthLabel;
     Health[] healthbar=new Health[20];
     
+    //Stores previous high score
+    public int highScore;
+    
     /**
      * Constructor for class MyWorld
+     * 
+     * @param highScore The high score from previous rounds
      */
-    public MyWorld(){    
+    public MyWorld(int highScore){    
         //Create a new world with 800x500 cells with a cell size of 1x1 pixels.
         super(800, 500, 1, false);
         
@@ -43,6 +48,9 @@ public class MyWorld extends World{
         spawnTarget();
         spawnBomb();
         spawnPotion();
+        
+        //Stores the high score
+        this.highScore=highScore;
     }
     
     /**
@@ -105,7 +113,7 @@ public class MyWorld extends World{
         
         //Switches to game over screen
         if(health<=0){
-            EndScreen end=new EndScreen(score);
+            EndScreen end=new EndScreen(score, highScore);
             Greenfoot.setWorld(end);
         }
         
