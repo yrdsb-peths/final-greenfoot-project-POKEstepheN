@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * This is world where the game actions occur
+ * This is the world where the game actions occur
  * 
  * @Stephen Liu
  * @December 17, 2022
@@ -20,7 +20,7 @@ public class MyWorld extends World{
     public int highScore;
     
     /**
-     * Constructor for class MyWorld
+     * Constructor for MyWorld class 
      * 
      * @param highScore The high score from previous rounds
      */
@@ -91,8 +91,7 @@ public class MyWorld extends World{
         scoreLabel.setValue("Score: "+score);
         
         //After five successful hits, the speed increases
-        if(score%5==0 && level<8)
-        {
+        if(score%5==0 && level<8){
             level++;
         }
     }

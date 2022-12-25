@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * The bomb inflicts damage to the character.
+ * The bomb inflicts damage to the character
  * 
  * @Stephen Liu 
  * @December 19, 2022
@@ -33,7 +33,7 @@ public class Bomb extends Actor{
     }
     
     /**
-     * This method displays different rotation images.
+     * This method displays different rotation images
      */
     public void bombAnimate(){
         if(rotationBombTimer.millisElapsed()<100){
@@ -49,7 +49,7 @@ public class Bomb extends Actor{
     }
     
     /**
-     * The bomb will perform actions like rotating and hitting the player
+     * The bomb will perform actions will rotate, move and respawn
      */
     public void act(){
         //If the bomb is in the main game world, it will animate.

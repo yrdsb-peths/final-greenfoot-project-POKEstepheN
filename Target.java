@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * The target is what the player is trying to shoot at.
+ * The target is what the player is trying to shoot at
  * 
  * @Stephen Liu 
  * @December 19, 2022
@@ -33,7 +33,7 @@ public class Target extends Actor{
     }
     
     /**
-     * This method displays different rotation images.
+     * This method displays different rotation images
      */
     public void targetAnimate(){
         if(rotationTargetTimer.millisElapsed()<100){
@@ -49,7 +49,8 @@ public class Target extends Actor{
     }
     
     /**
-     * The actions that the target will perform such as rotating.
+     * The actions that the target will perform, includes rotating, moving, 
+     * and respawning
      */
     public void act(){
         /*

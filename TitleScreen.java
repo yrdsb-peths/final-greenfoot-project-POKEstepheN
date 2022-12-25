@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * The title screen displays the name and instructions for the game.
+ * The title screen displays the name and instructions for the game
  * 
  * @Stephen Liu 
  * @December 18, 2022
@@ -10,7 +10,7 @@ public class TitleScreen extends World{
     GreenfootSound background=new GreenfootSound("Background Music.wav");
     
     /**
-     * Constructor of class TitleScreen
+     * Constructor of TitleScreen class 
      */
     public TitleScreen(){    
         // Create a new world with 800x500 cells with a cell size of 1x1 pixels.
@@ -70,7 +70,7 @@ public class TitleScreen extends World{
     }
     
     /**
-     * Checks if the space bar is pressed and goes to the game if pressed.
+     * Checks if the space bar is pressed and goes to the game if pressed
      */
     public void act(){
         if(Greenfoot.isKeyDown("space")){

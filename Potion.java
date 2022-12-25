@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * The potion heals the character.
+ * The potion heals the character if touched
  * 
  * @Stephen Liu
  * @December 19, 2022
@@ -11,7 +11,7 @@ public class Potion extends Actor{
     GreenfootSound healing=new GreenfootSound("Heal Sound.wav");
     
     /**
-     * Constructor for potion class
+     * Constructor for Potion class
      */
     public Potion(){
         GreenfootImage potionImage=getImage();  

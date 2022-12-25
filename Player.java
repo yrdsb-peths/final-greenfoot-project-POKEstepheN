@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * The player is the character the user will control and interact with.
+ * The player is the character the user will control and interact with
  * 
  * @Stephen Liu 
  * @December 19, 2022
@@ -75,7 +75,7 @@ public class Player extends Actor{
     }
     
     /**
-     * This method displays different images to create an animation.
+     * This method displays different images to create an animation
      */
     public void animate(){
         if(animationTimer.millisElapsed()<100){
@@ -97,7 +97,7 @@ public class Player extends Actor{
     }    
     
     /**
-     * This method displays different images to create an attack.
+     * This method displays different images to create an attack
      */
     public void attack(){
         if(attackTimer.millisElapsed()<150){
@@ -149,7 +149,7 @@ public class Player extends Actor{
     } 
     
     /**
-     * The actions that the player does or could do based on conditions.
+     * The player will run and attack
      */
     public void act(){
         if(state.equals("move")){

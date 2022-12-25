@@ -1,19 +1,18 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * The end screen is the display when the health of the player reaches 0
+ * The end screen is displayed when the health of the player reaches 0
  * 
  * @Stephen Liu 
  * @December 23, 2022
  */
-public class EndScreen extends World
-{
+public class EndScreen extends World{
     //Create a variable and a label to store and display the highest score 
     public int highScore;
     public Label highScoreLabel;
     
     /**
-     * Constructor for class EndScreen
+     * Constructor for EndScreen class 
      * 
      * @param score The number of points the user got throughout the game
      * @param high The high score from previous rounds
