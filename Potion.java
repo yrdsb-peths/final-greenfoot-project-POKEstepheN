@@ -7,6 +7,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @December 19, 2022
  */
 public class Potion extends Actor{
+    //Creates a healing sound effect
+    GreenfootSound healing=new GreenfootSound("Heal Sound.wav");
+    
     /**
      * Constructor for potion class
      */
@@ -32,6 +35,9 @@ public class Potion extends Actor{
             }
             //Occurs when the potion comes in contact with the player
             else if(isTouching(Player.class)){
+                //A sound effect is played
+                healing.play();
+                
                 //Remove the potion
                 world.removeObject(this);
                 

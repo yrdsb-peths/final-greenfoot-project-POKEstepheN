@@ -7,6 +7,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @December 18, 2022
  */
 public class TitleScreen extends World{
+    GreenfootSound background=new GreenfootSound("Background Music.wav");
+    
     /**
      * Constructor of class TitleScreen
      */
@@ -52,7 +54,21 @@ public class TitleScreen extends World{
         titlePotion.setImage(potionImage);
         addObject(titlePotion, 515, 485);
     }
-
+    
+    /**
+     * Plays the background music when game starts
+     */
+    public void started(){
+        background.playLoop();
+    }
+    
+    /**
+     * Stops the background music when game ends
+     */
+    public void stopped(){
+         background.pause();
+    }
+    
     /**
      * Checks if the space bar is pressed and goes to the game if pressed.
      */

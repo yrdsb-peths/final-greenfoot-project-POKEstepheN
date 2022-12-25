@@ -13,6 +13,10 @@ public class Player extends Actor{
     GreenfootImage[] attackRight=new GreenfootImage[3];
     GreenfootImage[] attackLeft=new GreenfootImage[3];
     
+    //Create attack sound effect and stores whether the sound has been played
+    GreenfootSound attackSound=new GreenfootSound("Player Sound.wav");
+    String soundStatus="Not Played";
+    
     /*
      * Sets the index for animation and attack images, the direction the 
      * player is facing, the state of moving or attacking
@@ -97,6 +101,10 @@ public class Player extends Actor{
      */
     public void attack(){
         if(attackTimer.millisElapsed()<150){
+            if(soundStatus.equals("Not Played")){
+                attackSound.play();
+                soundStatus="Played";
+            }
             return;
         }
         
@@ -170,6 +178,7 @@ public class Player extends Actor{
         String key=Greenfoot.getKey();
         if(key!=null && key.equals("q")){
             state="attack";
+            soundStatus="Not Played";
             attackTimer.mark();
         }
     }

@@ -10,6 +10,9 @@ public class Bomb extends Actor{
     //Creates a list to store the bomb's rotation animation
     GreenfootImage[] rotationBomb=new GreenfootImage[4];
     
+    //Creates a bomb sound effect
+    GreenfootSound explosion=new GreenfootSound("Bomb Sound.wav");
+    
     //Sets the index and speed
     int rotationBombIndex=0;
     SimpleTimer rotationBombTimer=new SimpleTimer();
@@ -62,6 +65,9 @@ public class Bomb extends Actor{
             }
             //Occurs when the bomb hits the player
             else if(isTouching(Player.class)){
+                //An explosion sound is generated
+                explosion.play();
+                
                 //Remove the bomb
                 world.removeObject(this);
                 

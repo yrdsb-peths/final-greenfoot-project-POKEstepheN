@@ -10,6 +10,9 @@ public class Target extends Actor{
     //Creates a list to store the target's rotation animation
     GreenfootImage[] rotationTarget=new GreenfootImage[4];
     
+    //Create sound effect if the target is hit
+    GreenfootSound hitSound=new GreenfootSound("Hit Target.wav");
+    
     //Sets the index and speed for rotation animation 
     int rotationTargetIndex=0;
     SimpleTimer rotationTargetTimer=new SimpleTimer();
@@ -66,6 +69,9 @@ public class Target extends Actor{
             
             //Occurs when the target is hit
             else if(isTouching(AttackBolt.class) && getX()<770){
+                //The hit sound effect is played
+                hitSound.play();
+                
                 //Remove the target
                 world.removeObject(this);
                 
