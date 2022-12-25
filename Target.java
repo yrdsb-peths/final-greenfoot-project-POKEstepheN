@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * The target is what the player is trying to shoot at.
+ * The target is what the player is trying to shoot at
  * 
  * @Stephen Liu 
  * @December 19, 2022
@@ -9,6 +9,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Target extends Actor{
     //Creates a list to store the target's rotation animation
     GreenfootImage[] rotationTarget=new GreenfootImage[4];
+    
+    //Create sound effect if the target is hit
+    GreenfootSound hitSound=new GreenfootSound("Hit Target.wav");
     
     //Sets the index and speed for rotation animation 
     int rotationTargetIndex=0;
@@ -30,7 +33,7 @@ public class Target extends Actor{
     }
     
     /**
-     * This method displays different rotation images.
+     * This method displays different rotation images
      */
     public void targetAnimate(){
         if(rotationTargetTimer.millisElapsed()<100){
@@ -46,7 +49,8 @@ public class Target extends Actor{
     }
     
     /**
-     * The actions that the target will perform such as rotating.
+     * The actions that the target will perform, includes rotating, moving, 
+     * and respawning
      */
     public void act(){
         /*
@@ -66,6 +70,9 @@ public class Target extends Actor{
             
             //Occurs when the target is hit
             else if(isTouching(AttackBolt.class) && getX()<770){
+                //The hit sound effect is played
+                hitSound.play();
+                
                 //Remove the target
                 world.removeObject(this);
                 

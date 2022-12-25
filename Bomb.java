@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * The bomb inflicts damage to the character.
+ * The bomb inflicts damage to the character
  * 
  * @Stephen Liu 
  * @December 19, 2022
@@ -9,6 +9,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Bomb extends Actor{
     //Creates a list to store the bomb's rotation animation
     GreenfootImage[] rotationBomb=new GreenfootImage[4];
+    
+    //Creates a bomb sound effect
+    GreenfootSound explosion=new GreenfootSound("Bomb Sound.wav");
     
     //Sets the index and speed
     int rotationBombIndex=0;
@@ -30,7 +33,7 @@ public class Bomb extends Actor{
     }
     
     /**
-     * This method displays different rotation images.
+     * This method displays different rotation images
      */
     public void bombAnimate(){
         if(rotationBombTimer.millisElapsed()<100){
@@ -46,7 +49,7 @@ public class Bomb extends Actor{
     }
     
     /**
-     * The bomb will perform actions like rotating and hitting the player
+     * The bomb will perform actions will rotate, move and respawn
      */
     public void act(){
         //If the bomb is in the main game world, it will animate.
@@ -62,6 +65,9 @@ public class Bomb extends Actor{
             }
             //Occurs when the bomb hits the player
             else if(isTouching(Player.class)){
+                //An explosion sound is generated
+                explosion.play();
+                
                 //Remove the bomb
                 world.removeObject(this);
                 

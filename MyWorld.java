@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * This is world where the game actions occur
+ * This is the world where the game actions occur
  * 
  * @Stephen Liu
  * @December 17, 2022
@@ -16,10 +16,15 @@ public class MyWorld extends World{
     public Label healthLabel;
     Health[] healthbar=new Health[20];
     
+    //Stores previous high score
+    public int highScore;
+    
     /**
-     * Constructor for class MyWorld
+     * Constructor for MyWorld class 
+     * 
+     * @param highScore The high score from previous rounds
      */
-    public MyWorld(){    
+    public MyWorld(int highScore){    
         //Create a new world with 800x500 cells with a cell size of 1x1 pixels.
         super(800, 500, 1, false);
         
@@ -43,6 +48,9 @@ public class MyWorld extends World{
         spawnTarget();
         spawnBomb();
         spawnPotion();
+        
+        //Stores the high score
+        this.highScore=highScore;
     }
     
     /**
@@ -83,8 +91,7 @@ public class MyWorld extends World{
         scoreLabel.setValue("Score: "+score);
         
         //After five successful hits, the speed increases
-        if(score%5==0 && level<8)
-        {
+        if(score%5==0 && level<8){
             level++;
         }
     }
@@ -105,7 +112,7 @@ public class MyWorld extends World{
         
         //Switches to game over screen
         if(health<=0){
-            EndScreen end=new EndScreen(score);
+            EndScreen end=new EndScreen(score, highScore);
             Greenfoot.setWorld(end);
         }
         

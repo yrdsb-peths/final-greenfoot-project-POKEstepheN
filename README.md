@@ -19,6 +19,18 @@ https://www.realcanadiansuperstore.ca/green-neon-poster-board-22-x-28-50-sheets-
 
 https://www.nme.com/news/gaming-news/a-new-pokemon-presents-will-air-this-weekend-3168921
 
+https://www.youtube.com/watch?v=-BKfhq_TtcE&ab_channel=braix
+
+https://mixkit.co/free-sound-effects/bomb/
+
+https://mixkit.co/free-sound-effects/discover/heal/
+
+https://mixkit.co/free-sound-effects/arcade/
+
+https://www.soundboard.com/sb/Pikachu_Sound
+
+https://cloudconvert.com/mp3-to-wav
+
 Resources:
 
 https://stackoverflow.com/questions/15078935/what-does-class-mean-in-java

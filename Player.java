@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * The player is the character the user will control and interact with.
+ * The player is the character the user will control and interact with
  * 
  * @Stephen Liu 
  * @December 19, 2022
@@ -12,6 +12,10 @@ public class Player extends Actor{
     GreenfootImage[] idleLeft=new GreenfootImage[4];
     GreenfootImage[] attackRight=new GreenfootImage[3];
     GreenfootImage[] attackLeft=new GreenfootImage[3];
+    
+    //Create attack sound effect and stores whether the sound has been played
+    GreenfootSound attackSound=new GreenfootSound("Player Sound.wav");
+    String soundStatus="Not Played";
     
     /*
      * Sets the index for animation and attack images, the direction the 
@@ -71,7 +75,7 @@ public class Player extends Actor{
     }
     
     /**
-     * This method displays different images to create an animation.
+     * This method displays different images to create an animation
      */
     public void animate(){
         if(animationTimer.millisElapsed()<100){
@@ -93,10 +97,14 @@ public class Player extends Actor{
     }    
     
     /**
-     * This method displays different images to create an attack.
+     * This method displays different images to create an attack
      */
     public void attack(){
         if(attackTimer.millisElapsed()<150){
+            if(soundStatus.equals("Not Played")){
+                attackSound.play();
+                soundStatus="Played";
+            }
             return;
         }
         
@@ -141,7 +149,7 @@ public class Player extends Actor{
     } 
     
     /**
-     * The actions that the player does or could do based on conditions.
+     * The player will run and attack
      */
     public void act(){
         if(state.equals("move")){
@@ -170,6 +178,7 @@ public class Player extends Actor{
         String key=Greenfoot.getKey();
         if(key!=null && key.equals("q")){
             state="attack";
+            soundStatus="Not Played";
             attackTimer.mark();
         }
     }
