@@ -29,6 +29,8 @@ https://mixkit.co/free-sound-effects/arcade/
 
 https://www.soundboard.com/sb/Pikachu_Sound
 
+https://cloudconvert.com/mp3-to-wav
+
 Resources:
 
 https://stackoverflow.com/questions/15078935/what-does-class-mean-in-java
