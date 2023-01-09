@@ -18,16 +18,20 @@ public class TitleScreen extends World{
 
         //Create and display a title
         Label title=new Label("Pokemon Targetry", 90);
+        title.setFillColor(Color.RED);
         addObject(title, getWidth()/2, 100);
 
         //Create and display instructions
         Label continueGame=new Label("Press <space> to continue", 50);
+        continueGame.setFillColor(Color.GREEN);
         addObject(continueGame, getWidth()/2, getHeight()/2);
 
         Label directions=new Label("Press the arrow keys to move character", 30);
+        directions.setFillColor(Color.PINK);
         addObject(directions, getWidth()/2, 380);
 
         Label objective1=new Label("Press <q> to shoot at ", 30);
+        objective1.setFillColor(Color.PINK);
         addObject(objective1, getWidth()/2, 415);
 
         Target titleTarget=new Target();
@@ -37,6 +41,7 @@ public class TitleScreen extends World{
         addObject(titleTarget, 540, 415);
 
         Label objective2=new Label("Dodge the ", 30);
+        objective2.setFillColor(Color.PINK);
         addObject(objective2, getWidth()/2, 450);
         
         Bomb titleBomb=new Bomb();
@@ -46,6 +51,7 @@ public class TitleScreen extends World{
         addObject(titleBomb, 478, 450);
         
         Label objective3=new Label("Heal by touching ", 30);
+        objective3.setFillColor(Color.PINK);
         addObject(objective3, getWidth()/2, 485);
         
         Potion titlePotion=new Potion();
