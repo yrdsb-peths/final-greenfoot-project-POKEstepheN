@@ -13,7 +13,7 @@ public class Target extends Actor{
     //Create sound effect if the target is hit
     GreenfootSound hitSound=new GreenfootSound("Hit Target.wav");
     
-    //Sets the index and speed for rotation animation 
+    //Sets the index for rotation animation 
     int rotationTargetIndex=0;
     SimpleTimer rotationTargetTimer=new SimpleTimer();
     
