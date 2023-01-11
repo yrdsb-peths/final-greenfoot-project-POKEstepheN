@@ -57,7 +57,15 @@ public class MyWorld extends World{
      * A new target appears at the right side of the window
      */
     public void spawnTarget(){
-        Target target=new Target();
+        int random=Greenfoot.getRandomNumber(100);
+        boolean isDefault;
+        if(random<80){
+            isDefault=true;
+        }
+        else{
+            isDefault=false;
+        }
+        Target target=new Target(isDefault);
         int x=800;
         int y=Greenfoot.getRandomNumber(getHeight());
         addObject(target, x, y);
@@ -85,9 +93,11 @@ public class MyWorld extends World{
     
     /**
      * The score is increased if the target is hit
+     * 
+     * @param scoreChange The amount of points the score changes by
      */
-    public void increaseScore(){
-        score++;
+    public void increaseScore(int scoreChange){
+        score+=scoreChange;
         scoreLabel.setValue("Score: "+score);
         
         //After five successful hits, the speed increases
