@@ -32,14 +32,24 @@ public class TitleScreen extends World{
 
         Label objective1=new Label("Press <q> to shoot at ", 30);
         objective1.setFillColor(Color.PINK);
-        addObject(objective1, getWidth()/2, 415);
+        addObject(objective1, getWidth()/2-175, 415);
 
-        Target titleTarget=new Target();
+        Target titleTarget=new Target(true);
         GreenfootImage targetImage=titleTarget.getImage();  
         targetImage.scale(34, 30);
         titleTarget.setImage(targetImage);
-        addObject(titleTarget, 540, 415);
-
+        addObject(titleTarget, 360, 415);
+        
+        Label objective1Extra=new Label("(      is worth triple the score)", 30);
+        objective1Extra.setFillColor(Color.PINK);
+        addObject(objective1Extra, getWidth()/2+135, 415);
+        
+        Target titleTarget2=new Target(false);
+        GreenfootImage targetImage2=titleTarget2.getImage();  
+        targetImage2.scale(34, 30);
+        titleTarget2.setImage(targetImage2);
+        addObject(titleTarget2, 405, 415);
+        
         Label objective2=new Label("Dodge the ", 30);
         objective2.setFillColor(Color.PINK);
         addObject(objective2, getWidth()/2, 450);
