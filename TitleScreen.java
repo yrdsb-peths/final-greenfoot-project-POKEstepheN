@@ -52,13 +52,23 @@ public class TitleScreen extends World{
         
         Label objective2=new Label("Dodge the ", 30);
         objective2.setFillColor(Color.PINK);
-        addObject(objective2, getWidth()/2, 450);
+        addObject(objective2, getWidth()/2-155, 450);
         
-        Bomb titleBomb=new Bomb();
+        Bomb titleBomb=new Bomb(true);
         GreenfootImage bombImage=titleBomb.getImage();  
         bombImage.scale(30, 30);
         titleBomb.setImage(bombImage);
-        addObject(titleBomb, 478, 450);
+        addObject(titleBomb, 315, 450);
+        
+        Label objective2Extra=new Label("(      costs twice the health)", 30);
+        objective2Extra.setFillColor(Color.PINK);
+        addObject(objective2Extra, getWidth()/2+80, 450);
+        
+        Bomb titleBomb2=new Bomb(false);
+        GreenfootImage bombImage2=titleBomb2.getImage();  
+        bombImage2.scale(30, 30);
+        titleBomb2.setImage(bombImage2);
+        addObject(titleBomb2, 355, 450);
         
         Label objective3=new Label("Heal by touching ", 30);
         objective3.setFillColor(Color.PINK);
