@@ -13,21 +13,38 @@ public class Bomb extends Actor{
     //Creates a bomb sound effect
     GreenfootSound explosion=new GreenfootSound("Bomb Sound.wav");
     
-    //Sets the index and speed
+    //Sets the index and timer
     int rotationBombIndex=0;
     SimpleTimer rotationBombTimer=new SimpleTimer();
     
+    //Stores the state of the bomb(default or shiny)
+    boolean isDefault;
+    
     /**
      * Contructor for Bomb class
+     * 
+     * @param isDefault The bomb state
      */
-    public Bomb(){
-        //The different rotation positions are created
-        for(int i=0; i<rotationBomb.length; i++){
-            rotationBomb[i]=new GreenfootImage("images/Bomb.png");
-            rotationBomb[i].rotate(-90*i);
-            rotationBomb[i].scale(77, 75);
-        }
+    public Bomb(boolean isDefault){
+        //Sets the state
+        this.isDefault=isDefault;
         
+        //The different rotation positions are created
+        if(isDefault){
+            for(int i=0; i<rotationBomb.length; i++){
+                rotationBomb[i]=new GreenfootImage("images/Bomb.png");
+                rotationBomb[i].rotate(-90*i);
+                rotationBomb[i].scale(77, 75);
+            }
+        }
+        else{
+            for(int i=0; i<rotationBomb.length; i++){
+                rotationBomb[i]=new GreenfootImage("images/ShinyBomb.png");
+                rotationBomb[i].rotate(-90*i);
+                rotationBomb[i].scale(77, 75);
+            }
+        }
+
         rotationBombTimer.mark();
         setImage(rotationBomb[0]);
     }
@@ -72,7 +89,12 @@ public class Bomb extends Actor{
                 world.removeObject(this);
                 
                 //The health will go down and a new bomb reappears
-                world.changeHealth(-4);
+                if(isDefault){
+                    world.changeHealth(-4);    
+                }
+                else{
+                    world.changeHealth(-8);
+                }
                 world.spawnBomb();
             }
         }

@@ -75,7 +75,15 @@ public class MyWorld extends World{
      * A new bomb appears at the screen's right side
      */
     public void spawnBomb(){
-        Bomb bomb=new Bomb();
+        int random=Greenfoot.getRandomNumber(100);
+        boolean isDefault;
+        if(random<80){
+            isDefault=true;
+        }
+        else{
+            isDefault=false;
+        }
+        Bomb bomb=new Bomb(isDefault);
         int x=800;
         int y=Greenfoot.getRandomNumber(getHeight());
         addObject(bomb, x, y);
