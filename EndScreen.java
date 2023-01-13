@@ -23,6 +23,7 @@ public class EndScreen extends World{
 
         //Create and display the Game Over message
         Label endLabel=new Label("Game Over", 90);
+        endLabel.setFillColor(Color.RED);
         addObject(endLabel, getWidth()/2, 150);
         
         //Create and display the score
@@ -42,6 +43,7 @@ public class EndScreen extends World{
         
         //Create and display instructions to restart
         Label restart=new Label("Press <space> to try again", 50);
+        restart.setFillColor(Color.GREEN);
         addObject(restart, getWidth()/2, 400);
     }
     

@@ -24,4 +24,13 @@ public class Health extends Actor{
         greyImage.scale(20, 40);
         setImage(greyImage);
     }
+    
+    /**
+     * The health box will turn red to signify low health
+     */
+    public void turnRed(){
+        GreenfootImage redImage=new GreenfootImage("images/Health2.png");  
+        redImage.scale(20, 40);
+        setImage(redImage);
+    }
 }
