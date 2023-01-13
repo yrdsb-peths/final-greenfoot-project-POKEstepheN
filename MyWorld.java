@@ -137,6 +137,9 @@ public class MyWorld extends World{
         //Updates health bar
         for(int i=0; i<healthbar.length; i++){
             healthbar[i]=new Health();
+            if(i<health && health<=5){
+                healthbar[i].turnRed();
+            }
             if(i>=health){
                 healthbar[i].turnGrey();
             }
