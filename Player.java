@@ -159,17 +159,17 @@ public class Player extends Actor{
             attack();
         }
         //The player moves in a direction based on the arrow keys
-        if(Greenfoot.isKeyDown("up")){
+        if(Greenfoot.isKeyDown("up") && getY()>=5){
             setLocation(getX(), getY()-5);
         }
-        if(Greenfoot.isKeyDown("right")){
+        if(Greenfoot.isKeyDown("right") && getX()<=795){
             setLocation(getX()+5, getY());
             facing="right";
         }
-        if(Greenfoot.isKeyDown("down")){
+        if(Greenfoot.isKeyDown("down") && getY()<=495){
             setLocation(getX(), getY()+5);
         }
-        if(Greenfoot.isKeyDown("left")){
+        if(Greenfoot.isKeyDown("left") && getX()>=5){
             setLocation(getX()-5, getY());
             facing="left";
         }
