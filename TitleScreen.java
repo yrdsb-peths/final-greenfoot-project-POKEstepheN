@@ -7,6 +7,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @December 18, 2022
  */
 public class TitleScreen extends World{
+    //Stores the background music for the game
     GreenfootSound background=new GreenfootSound("Background Music.wav");
     
     /**
