@@ -33,7 +33,7 @@ public class MyWorld extends World{
         addObject(player, 100, getHeight()/2);
         
         //Create score counter
-        scoreLabel=new Label("Score: "+score, 80);
+        scoreLabel=new Label("Score: "+score, 60);
         addObject(scoreLabel, 650, 60);
         
         //Display health bar
