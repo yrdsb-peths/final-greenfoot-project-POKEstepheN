@@ -1,5 +1,10 @@
-# Final Greenfoot Project
-This is the README.md file.
+Pokemon Targetry
+
+By: Stephen Liu
+
+![alt text](/images/GamePreview.png)
+
+The Pokemon Targetry game is about a Pikachu (The yellow mouse) trying to shoot thunderbolts at the spheal (The blue seal). Meanwhile, the player tries to avoid the voltorb (The red bomb) and touch the potions to survive and collect a higher score. To start playing the game, clone the repository from github and open it in greenfoot. 
 
 Works Cited
 
