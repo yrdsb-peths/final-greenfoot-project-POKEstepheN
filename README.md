@@ -1,10 +1,9 @@
-Pokemon Targetry
-
+# Pokemon Targetry
 By: Stephen Liu
 
 ![alt text](/images/GamePreview.png)
 
-The Pokemon Targetry game is about a Pikachu (The yellow mouse) trying to shoot thunderbolts at the spheal (The blue seal). Meanwhile, the player tries to avoid the voltorb (The red bomb) and touch the potions to survive and collect a higher score. To start playing the game, clone the repository from github and open it in greenfoot. 
+The Pokemon Targetry game is about a Pikachu (The yellow mouse) trying to shoot thunderbolts at the spheal (The blue or purple seal). Meanwhile, the player tries to avoid the voltorb (The red or blue bomb) and touch the potions to survive and collect a higher score. To start playing the game, first clone the repository from Github. Second, open Greenfoot in the computer and click on the scenario heading in the upper-left corner. Third, select open and choose the folder where the repository for the game was stored.   
 
 Works Cited
 
@@ -43,3 +42,5 @@ https://ezgif.com/sprite-cutter
 https://cloudconvert.com/mp3-to-wav
 
 https://www.greenfoot.org/topics/1375
+
+https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax
